@@ -1,7 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
 from thread_creator import createThread
-from datetime import datetime
+from datetime import datetime, timedelta
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -34,7 +34,7 @@ def getThreadId(id: str) -> str:
     return ''  
     
 def signUp(username: str) -> str:
-    now = datetime.now()
+    now = datetime.utcnow() + timedelta(hours=9)
     if checkSignIn(username) == False:
         doc_ref = db.collection("user").document(username)
         doc_ref.set(
@@ -48,7 +48,7 @@ def signUp(username: str) -> str:
 
 def saveChat(username: str, role: str, prompt: str) -> None:
     '''username과 지금 대화의 role과 그의 prompt를 입력하면 시간과 함께 DB에 저장되는 함수'''
-    now = datetime.now()
+    now = datetime.utcnow() + timedelta(hours=9)
     #계층적 collection/document 접근 방법
     doc_ref = db.collection("user").document(username)
     chat_ref = doc_ref.collection('chat_log').document(now.strftime("%Y-%m-%d"))
