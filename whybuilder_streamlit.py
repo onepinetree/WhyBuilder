@@ -32,7 +32,7 @@ with st.sidebar:
 
     st.title('닉네임 등록')
     new_user_id = st.text_input('✅ 새로운 닉네임 등록') 
-    st.caption('닉네임을 기억하지 못하면 대화 저장이 어려워요 \n등록하신 닉네임은 꼭 기억해주세요') 
+    st.caption('닉네임을 기억하지 못하면 대화 저장이 어려워요    \n등록하신 닉네임은 꼭 기억해주세요') 
     signup_btn = st.button("닉네임 등록") 
     if signup_btn:
         if checkSignIn(new_user_id):
@@ -44,8 +44,7 @@ with st.sidebar:
 
 st.title("💬 WhyBuilder")
 #st.caption("🚀 와이빌더를 통해 목표에 대한 여러분의 열정과 동기를 명확히 하고, 그 목표 달성을 위한 실질적인 첫걸음을 내딛으세요.")
-st.caption("🚀 와이빌더와 대화하고 목표를 구체화해요")
-st.caption("🚀 목표를 향한 열정과 동기를 와이빌더에 저장해요")
+st.caption("🚀 와이빌더와 대화하고 목표를 구체화해요 \n목표를 향한 열정과 동기를 와이빌더에 저장해요.")
 
 image_paths = ["assets/bright_woman_moti.webp", "assets/man_moti.webp", "assets/red_woman_moti.webp"]
 # 두 이미지를 나란히 표시, 만약 한개면 경로를 리스트 자리에 바로 넣기
